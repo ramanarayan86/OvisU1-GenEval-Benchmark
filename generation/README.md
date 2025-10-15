@@ -25,7 +25,7 @@ hf download AIDC-AI/Ovis-U1-3B --revision main --local-dir ./Ovis-U1-3B
 
 ```
 
-### Image Generation
+## Image Generation
 
 Then use these commands to run the Ovis-U1 on the GenEval Dataset
 
@@ -59,7 +59,7 @@ Set up a separate environment for evaluation
 
 Follow this link for setting up the environment https://github.com/djghosh13/geneval/issues/12#issuecomment-2789202971
 
-## or use the following methods or use the below environment file 
+### or use the following methods or use the below environment file 
 
 ```bash
 environment_geneval_evaluation_a100.yaml
@@ -71,14 +71,14 @@ First and foremost, the python version. It is quite important. I used python 3.8
 
 Given that you have installed python 3.8.10 and its alias is python I like to use venv for my environment creation. You can obviously use conda and do the same exact thing. Activate your environment and do the following things step by step.
 
-# 1. Cloning the repository and downloading the ckpt
+### 1. Cloning the repository and downloading the ckpt
 
 ```
 git clone https://github.com/djghosh13/geneval.git
 cd geneval --> ./evaluation/download_models.sh "<OBJECT_DETECTOR_FOLDER>/" (this downloads the ckpt to <OBJECT_DETECTOR_FOLDER>/)
 ```
 
-# 2. Installing dependencies
+### 2. Installing dependencies
 
 ```python
 
@@ -106,7 +106,7 @@ pip install --upgrade setuptools
 
 ```
 
-# 3. mmengine and mmcv dependency installation (Should be done after pip installations)
+### 3. mmengine and mmcv dependency installation (Should be done after pip installations)
 
 ```bash
 mim install mmengine mmcv-full==1.7.2
@@ -120,7 +120,7 @@ cd mmcv; git checkout 1.x
 MMCV_WITH_OPS=1 MMCV_CUDA_ARGS="-arch=sm_90" pip install -v -e .
 ```
 
-# 4. mmdet installation
+### 4. mmdet installation
 
 ```bash
 git clone https://github.com/open-mmlab/mmdetection.git
@@ -129,7 +129,7 @@ pip install -v -e . (In case of Hopper GPUs change this to:MMCV_CUDA_ARGS="-arch
 ```
 
 
-### Evaluation 
+## Evaluation 
 
 For Evaluation on A100 use this following command
 
